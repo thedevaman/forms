@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{useState} from 'react';
 
 function App() {
+
+  const [name,setName] = useState("");
+  const [tnc,setTnc] = useState(false);
+  const[interest,setInterest] = useState("");
+
+
+  function getFormData(e){
+    console.warn(name,tnc,interest)
+    e.preventDefault()//its stop to submit the data of form
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>Handle form</h1>
+     <form onSubmit={getFormData}>
+      <input type="text" name="" id="" onChange={(e)=>setName(e.target.value)}  placeholder='Enter Name'/><br/><br/>
+      <select name="" id="" onChange={(e)=>setInterest(e.target.value)}>
+        <option>Select Option</option>
+        <option>Marvel</option>
+        <option>Dc</option><br/><br/>
+        </select>
+        <input type="checkbox" name="" id="" onChange={(e)=>setTnc(e.target.checked)} /><span>Accept Terms and Condition</span>
+        <br/>
+        <button type="submit">Submit</button>
+     
+     </form>
     </div>
   );
 }
