@@ -1,11 +1,12 @@
 import './App.css';
 import React,{useState} from 'react';
+import Profile from './Profile';
 
 function App() {
 
   const [name,setName] = useState("");
   const [tnc,setTnc] = useState(false);
-  const[interest,setInterest] = useState("");
+  const [interest,setInterest] = useState("");
 
 
   function getFormData(e){
@@ -27,6 +28,9 @@ function App() {
         <button type="submit">Submit</button>
      
      </form>
+     <hr/>
+     <h1>Rendering</h1>
+     <Profile/>
     </div>
   );
 }
