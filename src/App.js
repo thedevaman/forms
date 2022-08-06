@@ -2,6 +2,8 @@ import './App.css';
 import React,{useState} from 'react';
 import Profile from './Profile';
 import Login from './Login';
+import User from './User';
+import Members from './Members';
 
 function App() {
 
@@ -14,6 +16,13 @@ function App() {
     console.warn(name,tnc,interest)
     e.preventDefault()//its stop to submit the data of form
   }
+  
+
+  function getData(){
+    alert('hello From app')
+  }
+
+
   return (
     <div className="App">
      <h1>Handle form</h1>
@@ -34,6 +43,13 @@ function App() {
      <Profile/>
      <hr/>
      <Login/>
+     <hr/>
+     <User data={getData}/>
+     <User data={getData}/>
+     <User data={getData}/>
+     <div style={{float:'right'}}>
+      <Members data={getData}/>
+     </div>
     </div>
   );
 }
