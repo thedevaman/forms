@@ -1,6 +1,7 @@
 import './App.css';
 import React,{useState} from 'react';
 import Profile from './Profile';
+import Login from './Login';
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
      <hr/>
      <h1>Rendering</h1>
      <Profile/>
+     <hr/>
+     <Login/>
     </div>
   );
 }
